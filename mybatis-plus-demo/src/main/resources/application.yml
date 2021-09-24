@@ -1,0 +1,40 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://10.157.163.47:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC&autoReconnect=true
+    username: root
+    password: FLq4OsTMyDzVOtmTL1yU
+    type: com.alibaba.druid.pool.DruidDataSource
+    filters: ${DATABASE_FILTERS:stat,log4j}
+    initialSize: ${DATABASE_INITIALSIZE:10}
+    minIdle: ${DATABASE_MINIDLE:10}
+    maxActive: ${DATABASE_MAXACTIVE:1000}
+    maxWait: ${DATABASE_MAXWAIT:-1}
+    timeBetweenEvictionRunsMillis: ${DATABASE_TIMEBETWEENEVICTIONRUNSMILLIS:60000}
+    minEvictableIdleTimeMillis: ${DATABASE_MINEVICTABLEIDLETIMEMILLIS:1800000}
+    logSlowSql: ${DATABASE_LOGSLOWSQL:true}
+    poolPreparedStatements: ${DATABASE_POOLPREPAREDSTATEMENTS:true}
+    druid:
+        username: admin
+        password: password
+  flyway:
+    baseline-on-migrate: true
+    table: scheme-version
+    baseline-version: 0
+
+mybatis-plus:
+  typeAliasesPackage: com.xiaoyao.mybatis.plus.demo.entity
+  mapper-locations: classpath*:/mybatis/**/*.xml
+
+
+logging:
+    level:
+       com:
+         xiaoyao:
+           mybatis:
+                plus:
+                  demo:
+                    mapper: debug

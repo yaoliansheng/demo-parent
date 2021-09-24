@@ -1,0 +1,17 @@
+server:
+  port: 8080
+spring:
+  cache:
+    type: redis
+  redis:
+    host: 10.157.163.47
+    port: 6379
+    password: DHJR202fKyWBxM0Z
+    database: 15
+    timeout: 3000
+    jedis:
+      pool:
+        max-active: 50
+        max-wait: -1
+        min-idle: 0
+        max-idle: 8
