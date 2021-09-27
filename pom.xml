@@ -20,6 +20,7 @@
         <module>mysql-interceptor-demo</module>
         <module>multiple-datasources-demo</module>
         <module>mybatis-plus-demo</module>
+        <module>redisson-lock</module>
     </modules>
 
     <properties>
